@@ -1,0 +1,5 @@
+AuthName "Please login first."
+AuthType Basic
+AuthUserFile /var/www/.htpasswd
+AuthGroupFile /dev/null
+require user musashi
