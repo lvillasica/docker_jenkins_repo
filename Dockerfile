@@ -5,7 +5,6 @@ RUN echo 'deb http://us.archive.ubuntu.com/ubuntu/ trusty universe' >> /etc/apt/
 RUN apt-get -y update
 
 RUN apt-get install apache2 -y
-RUN mkdir /var/www/debian
 ADD ./run.sh /var/lib/run.sh
 RUN chmod 777 /var/lib/run.sh
 ADD ./000-default.conf /etc/apache2/sites-available/000-default.conf
@@ -15,5 +14,5 @@ RUN sudo apt-get install apache2-utils -y
 
 EXPOSE 80
 
-VOLUME ["/var/www/debian"]
+VOLUME ["/var/www"]
 ENTRYPOINT ["/var/lib/run.sh"]
